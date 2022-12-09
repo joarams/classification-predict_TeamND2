@@ -54,8 +54,8 @@ def main():
 
 	# Creates a main title and subheader on your page -
 	# these are static across all pages
-	st.title("Tweet Classifer")
-	st.subheader("Climate change tweet classification")
+	st.title("Climate Sense")
+	st.subheader("How Each Tweet Stands as Regards Climate Change Beliefs")
 
 
 	# Creating sidebar with selection box -
@@ -87,7 +87,7 @@ def main():
 			vect_text = tweet_cv.transform([tweet_text]).toarray()
 			# Load your .pkl file with the model of your choice + make predictions
 			# Try loading in multiple models to give the user a choice
-			st.subheader("Logistic Regression Model")
+			st.subheader("Classifier One")
 			predictor = joblib.load(open(os.path.join("resources/Logistic_regression.pkl"),"rb"))
 			prediction = predictor.predict(vect_text)
 
@@ -103,7 +103,7 @@ def main():
 			if prediction==-1:
 				st.success("Statement Unsure if Climate Change is Real")
 
-			st.subheader("Support Vector Machine Model")
+			st.subheader("Classifier Two")
 			predictor_svm = joblib.load(open(os.path.join("resources/tfidfvect.pkl"),"rb"))
 			prediction_svm = predictor_svm.predict(vect_text)
 			# When model has successfully run, will print prediction
