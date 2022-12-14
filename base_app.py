@@ -63,8 +63,13 @@ def main():
 
 		st.info("Team Information - Experts and their Roles")
 		# You can read a markdown file from supporting resources folder
-		st.markdown("This Web app has been adapted and developed by the J.GAD AI - a group of       \
-			five students from the July 2022 cohort of the Explore AI Academy Data Science course.")
+		st.markdown("This Web app has been adapted and developed by the J.GAD AI, a                            \
+		leading data science firm with AI-powered solutions and its own R&D Center. J.GAD AI\’s                \
+		mission is to help our clients improve competitiveness and get great results from their work.          \
+		We strive to reach these goals applying innovative and proprietary development technologies,           \
+		providing exceptional services, and using excellent professional expertise.                           \n\
+		We help businesses get valuable insights into data, automate repetitive tasks,                         \
+		enhance performance, add AI-driven features, and prevent cost overruns.")
 
 		st.subheader("Meet the Team")
 		if st.button('Aniedi'): # information is hidden if button is clicked
