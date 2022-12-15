@@ -63,12 +63,12 @@ def main():
 
 		st.info("Team Information - Experts and their Roles")
 		# You can read a markdown file from supporting resources folder
-		st.markdown("This Web app has been adapted and developed by the J.GAD AI, a                            \
-		leading data science firm with AI-powered solutions and its own R&D Center. J.GAD AI\’s                \
-		mission is to help our clients improve competitiveness and get great results from their work.          \
-		We strive to reach these goals applying innovative and proprietary development technologies,           \
-		providing exceptional services, and using excellent professional expertise.                           \n\
-		We help businesses get valuable insights into data, automate repetitive tasks,                         \
+		st.markdown("This Web app has been adapted and developed by the J.GAD AI, a                              \
+		leading data science firm with AI-powered solutions and its own R&D Center.                              \
+		J.GAD AI’s mission is to help our clients improve competitiveness and get great results from their work.          \
+		We strive to reach these goals applying innovative and proprietary development technologies,             \
+		providing exceptional services, and using excellent professional expertise.                            \n\
+		We help businesses get valuable insights into data, automate repetitive tasks,                          \
 		enhance performance, add AI-driven features, and prevent cost overruns.")
 
 		st.subheader("Meet the Team")
@@ -82,12 +82,15 @@ def main():
 			st.markdown('Josiah Aramide is the J.GAD AI CEO')
 		if st.button('Joy'): # information is hidden if button is clicked
 			st.markdown('Joy Obukohwo is the J.GAD AI Product Owner')
+		
+		image = Image.open('JGAD_logo.jpeg') # company logo
+		st.image(image, caption='J.GAD-AI')
 
 	# Building out the "Information" page
 	if selection == "Information":
 		st.info("Project Overview")
 		# You can read a markdown file from supporting resources folder
-		st.markdown("Many companies are built around lessening one\’s environmental impact or carbon footprint. \
+		st.markdown("Many companies are built around lessening one’s environmental impact or carbon footprint. \
 		They offer products and services that are environmentally friendly and sustainable,             \
 		in line with their values and ideals. They would like to determine how people perceive           \
 		climate change and whether or not they believe it is a real threat. This would add to their       \
@@ -99,8 +102,11 @@ def main():
 		st.subheader("Raw Twitter data and label")
 		if st.checkbox('Show raw data'): # data is hidden if box is unchecked
 			st.write(raw[['sentiment', 'message']]) # will write the df to the page
+		
+		image = Image.open('JGAD_logo.jpeg')   # company logo
+		st.image(image, caption='J.GAD-AI')
 
-	# Building out the prediction 1 page
+	# Building out the Classification 1 page
 	if selection == "Classification 1":
 		st.info("Classification with Base ML Model")
 		# Creating a text box for user input
@@ -125,8 +131,11 @@ def main():
 				st.success(f"Text Categorized as: News or Class {prediction}")
 			if prediction == -1:
 				st.success(f"Text Categorized as: Anti-climate change or Class {prediction}")
+			
+		image = Image.open('JGAD_logo.jpeg')   # company logo
+		st.image(image, caption='J.GAD-AI')
 
-	# Building out the prediction 2 page
+	# Building out the Classification 2 page
 	if selection == "Classification 2":
 		st.info("Classification with Improved ML Model")
 		# Creating a text box for user input
@@ -148,6 +157,9 @@ def main():
 				if prediction == key:
 					st.success(f"Text Categorized as: {dict_pred[key]}")
 				#st.success("Text Categorized as: {}".format(prediction))
+			
+		image = Image.open('JGAD_logo.jpeg')   # company logo
+		st.image(image, caption='J.GAD-AI')
 
 # Required to let Streamlit instantiate our web app.  
 if __name__ == '__main__':
